@@ -9,10 +9,11 @@
       id="search"
       class="search"
       placeholder="Prénom"
+      v-model="nom"
     />
     <hr />
-    <ul class="grid">
-      <li v-for="person in people" :key="person.email">
+    <ul class="grid" v-for="person in people" :key="person.email">
+      <li v-if="nom.isEmpty">
         <img :src="person.picture" :alt="person.picture" />
         <strong>{{ person.firstname }}</strong>
       </li>
@@ -69,6 +70,10 @@ import data from '@/inc/data'
 export default defineComponent({
   name: 'Trombi',
   setup() {
+
+    data.forEach(personne => {
+      personne
+    });
     return {
       people: data.b3g1,
     }
